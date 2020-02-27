@@ -204,7 +204,7 @@ public void mpttopupselamt() throws InterruptedException
 
 
 
-@Test
+@Test(priority =5)
 public void mptdataplan() throws InterruptedException
 {
 	
