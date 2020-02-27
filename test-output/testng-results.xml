@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17714" started-at="2020-02-24T09:57:27Z" finished-at="2020-02-24T09:57:45Z">
+  <suite name="Default suite" duration-ms="184502" started-at="2020-02-27T09:54:35Z" finished-at="2020-02-27T09:57:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17714" started-at="2020-02-24T09:57:27Z" finished-at="2020-02-24T09:57:45Z">
+    <test name="Default test" duration-ms="184502" started-at="2020-02-27T09:54:35Z" finished-at="2020-02-27T09:57:40Z">
       <class name="com.okdollar.test.topupothertest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.okdollar.test.topupothertest@185d8b6]" name="setUp" is-config="true" duration-ms="17695" started-at="2020-02-24T16:27:27Z" finished-at="2020-02-24T16:27:45Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.okdollar.test.topupothertest@22a67b4]" name="setUp" is-config="true" duration-ms="13520" started-at="2020-02-27T16:24:35Z" finished-at="2020-02-27T16:24:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="ooredootopupselamt()[pri:0, instance:com.okdollar.test.topupothertest@185d8b6]" name="ooredootopupselamt" duration-ms="5" started-at="2020-02-24T16:27:45Z" finished-at="2020-02-24T16:27:45Z">
+        <test-method status="PASS" signature="ooredoodataplan()[pri:1, instance:com.okdollar.test.topupothertest@22a67b4]" name="ooredoodataplan" duration-ms="95070" started-at="2020-02-27T16:24:49Z" finished-at="2020-02-27T16:26:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ooredootopupselamt -->
+        </test-method> <!-- ooredoodataplan -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.okdollar.test.topupothertest@22a67b4]" name="setUp" is-config="true" duration-ms="74859" started-at="2020-02-27T16:26:24Z" finished-at="2020-02-27T16:27:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="ooredoodataplanverify()[pri:1, instance:com.okdollar.test.topupothertest@22a67b4]" name="ooredoodataplanverify" duration-ms="1035" started-at="2020-02-27T16:27:39Z" finished-at="2020-02-27T16:27:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ooredoodataplanverify -->
       </class> <!-- com.okdollar.test.topupothertest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

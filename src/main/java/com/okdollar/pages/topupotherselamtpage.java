@@ -31,6 +31,8 @@ public class topupotherselamtpage extends base{
 	@FindBy(xpath = "//*[@text='1,000']")
 	public AndroidElement   amt  ;
 	
+
+	
 	@FindBy(xpath = "//*[@resource-id='com.jas.digitalkyats:id/topup_amt_fieldId']")
 	public AndroidElement enteramtfield    ;
 	

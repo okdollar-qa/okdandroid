@@ -10,7 +10,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class topupotherreceiptpage extends base {
 
-	@FindBy(xpath = "//*[@resource-id='com.jas.digitalkyats:id/toolbar_title']")
+	@FindBy(xpath = "//*[@text='Receipt']")
 	public AndroidElement   title  ;
 	
 	@FindBy(xpath = "//*[@resource-id='com.jas.digitalkyats:id/transcation_success_number_of_destimnation_input']")

@@ -34,7 +34,7 @@ public class base {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream("D:\\Users\\User\\eclipse-workspace\\manikandan\\src\\main\\java\\com\\okdollar\\config\\config.properties");
 			prop.load(ip);
-			System.out.println(prop.getProperty("devid"));
+			//System.out.println(prop.getProperty("devid"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
