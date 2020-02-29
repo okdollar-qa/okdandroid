@@ -28,7 +28,7 @@ public class paytotest extends base {
 	public void payto() throws InterruptedException
 	{
 		
-	pp.paytosubmit();
+
 		
 	}
 	

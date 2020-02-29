@@ -16,6 +16,10 @@ public class dashboardpage extends base{
 	@FindBy(xpath="//*[@text='Other Number']")
 	public AndroidElement topupothernumbericon;
 	
+	@FindBy(xpath="//*[@text='Pay / Send']")
+	public AndroidElement payto;
+	
+	
 
 	
 	public dashboardpage() {
