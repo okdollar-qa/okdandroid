@@ -1,6 +1,8 @@
 package com.okdollar.pages;
 
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -8,6 +10,7 @@ import com.okdollar.base.base;
 
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import okdollar.payto;
 
 public class paytopage extends base {
 	
@@ -138,7 +141,17 @@ public class paytopage extends base {
 	@FindBy(xpath="//*[@resource-id='com.jas.digitalkyats:id/btn_settings']")
 	public AndroidElement tipopupokbtn  ;
 	
-
+	@FindBy(xpath="//*[@resource-id='com.jas.digitalkyats:id/contact']")
+	public AndroidElement suggestion  ;
+	
+	@FindBy(xpath="//*[@text=concat('You can', \"'\", 't make payment same amount and same number within 2 minutes.')]")
+	public AndroidElement twominspopup  ;
+	
+	@FindBy(xpath="//*[@text='OK']")
+	public AndroidElement twominspopupokbtn  ;
+	
+	
+	
 	
 	
 	
@@ -149,6 +162,82 @@ public class paytopage extends base {
 		//PageFactory.initElements(driver, this);
 	}
 	
+	public void selectvehicle() throws InterruptedException {
+	
+	addvehiclefield.click();
+	 try{
+         driver.findElement(By.xpath("//*[@class='android.widget.EditText' and ./parent::*[@class='android.widget.FrameLayout']]"));
+         payto.loginpwd(driver);
+     }
+     catch(NoSuchElementException e){
+        
+     }
+	driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/add_car_row_text']")).click();
+	
 
+}
+	public void selfromcontact(String name) throws InterruptedException
+	{
+		
+	
+		Thread.sleep(2000);
+		if(driver.findElements(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[2]")).size()==0)
+		{
+		 
+		   driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[3]")).click(); 
+
+		}
+		else
+		{
+		  driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[2]")).click();
+
+		}  
+			Thread.sleep(3000);
+		addfromcontact.click();
+		AndroidElement consericon = driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search']"));
+		consericon.click();
+		
+		AndroidElement conser = driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/toolbar_title_text']"));
+		conser.sendKeys(name);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("(//*[@class='androidx.recyclerview.widget.RecyclerView']/*/*[@id='llinear_contact_item_row' and ./*[@id='okdollar']])[1]")).click();
+		
+		
+	}
+	
+	public void selfromfav(String number) throws InterruptedException
+	{
+		
+	
+		Thread.sleep(2000);
+		if(driver.findElements(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[2]")).size()==0)
+		{
+		 
+		   driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[3]")).click(); 
+
+		}
+		else
+		{
+		  driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[2]")).click();
+
+		}  
+			Thread.sleep(3000);
+		addfromfav.click();
+		driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search_button']")).click();
+		
+		driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search_src_text']")).sendKeys(number);
+		driver.findElement(By.xpath("(//*[@id='mfavist_recycler']/*/*/*/*[@class='android.widget.RelativeLayout' and ./*[@id='image_layout']])[1]")).click();
+		
+		
+	}
+	
+	public void selcountry(String name) throws InterruptedException
+	{
+		
+	flag.click();
+	driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search']")).sendKeys(name);
+	driver.findElement(By.xpath("//*[@class='android.widget.LinearLayout' and @width>0 and ./*[@text='India   (+91)'] and ./*[@id='tv_country_code']]")).click();
+		
+	}
 
 }

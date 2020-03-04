@@ -100,7 +100,9 @@ public class paytoreceiptpage extends base{
 
 	@FindBy(xpath="//*[@resource-id='com.jas.digitalkyats:id/relative_Share']")
 	public AndroidElement share    ;
-
+	
+	@FindBy(xpath="//*[@resource-id='com.jas.digitalkyats:id/transcation_success_car']")
+	public AndroidElement vehiclenumberval  ;
 	
 	
 	

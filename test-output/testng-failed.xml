@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.okdollar.test.topupothertest">
+      <class name="com.okdollar.test.paytotest">
         <methods>
+          <include name="merratingfromsuggestion"/>
           <include name="setUp"/>
-          <include name="ooredoodataplanverify"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.okdollar.test.topupothertest -->
+      </class> <!-- com.okdollar.test.paytotest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

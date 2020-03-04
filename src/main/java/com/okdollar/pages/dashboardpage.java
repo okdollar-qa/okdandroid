@@ -17,7 +17,11 @@ public class dashboardpage extends base{
 	public AndroidElement topupothernumbericon;
 	
 	@FindBy(xpath="//*[@text='Pay / Send']")
-	public AndroidElement payto;
+	public AndroidElement paytoicon;
+	
+	@FindBy(xpath="//*[@resource-id='com.jas.digitalkyats:id/searchLayout']")
+	public AndroidElement searchbar;
+	
 	
 	
 
