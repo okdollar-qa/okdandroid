@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.okdollar.base.base;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import okdollar.payto;
@@ -167,7 +168,7 @@ public class paytopage extends base {
 	addvehiclefield.click();
 	 try{
          driver.findElement(By.xpath("//*[@class='android.widget.EditText' and ./parent::*[@class='android.widget.FrameLayout']]"));
-         payto.loginpwd(driver);
+        base.loginpwd(driver);
      }
      catch(NoSuchElementException e){
         
@@ -194,10 +195,10 @@ public class paytopage extends base {
 		}  
 			Thread.sleep(3000);
 		addfromcontact.click();
-		AndroidElement consericon = driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search']"));
+		MobileElement consericon =  driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search']"));
 		consericon.click();
 		
-		AndroidElement conser = driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/toolbar_title_text']"));
+		MobileElement conser =  driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/toolbar_title_text']"));
 		conser.sendKeys(name);
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("(//*[@class='androidx.recyclerview.widget.RecyclerView']/*/*[@id='llinear_contact_item_row' and ./*[@id='okdollar']])[1]")).click();
@@ -238,6 +239,33 @@ public class paytopage extends base {
 	driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search']")).sendKeys(name);
 	driver.findElement(By.xpath("//*[@class='android.widget.LinearLayout' and @width>0 and ./*[@text='India   (+91)'] and ./*[@id='tv_country_code']]")).click();
 		
+	}
+	public void removefromfav(String number) throws InterruptedException
+	{
+
+
+			
+			
+			Thread.sleep(2000);
+			if(driver.findElements(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[2]")).size()==0)
+			{
+			 
+			   driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[3]")).click(); 
+
+			}
+			else
+			{
+			  driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='nvlValidation']]/*[@class='android.widget.ImageView' and @width>0])[2]")).click();
+
+			}  
+				Thread.sleep(3000);
+			addfromfav.click();
+			driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search_button']")).click();
+			
+			driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search_src_text']")).sendKeys(number);	
+			
+			//driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/search_src_text']")).getCenter()
+			
 	}
 
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.okdollar.base.base;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -64,10 +65,10 @@ public void selfromcontact(String name) throws InterruptedException
 	  driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='com.jas.digitalkyats:id/' and @class='android.widget.LinearLayout']]/*[@class='android.widget.ImageView'])[2]")).click();
 
 	}  
-	AndroidElement consericon = driver.findElement(By.xpath("//*[@contentDescription='Search for other area']"));
+	MobileElement consericon =  driver.findElement(By.xpath("//*[@contentDescription='Search for other area']"));
 	consericon.click();
 	
-	AndroidElement conser = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
+	MobileElement conser =   driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
 	conser.sendKeys(name);
 	Thread.sleep(5000);
 	driver.findElement(By.xpath("//*[@class='android.widget.LinearLayout' and @width>0 and @height>0 and ./*[@text and @id='com.jas.digitalkyats:id/']]")).click();
@@ -102,7 +103,7 @@ public void seldepphoto() throws InterruptedException
 	driver.findElement(By.xpath("//*[@text='Attach Depositor Face Photo']")).click();
 	driver.findElement(By.xpath("//*[@text='Gallery']")).click();
 	driver.findElement(By.xpath("//*[@text='OK']")).click();
-	AndroidElement image =driver.findElement(By.xpath("//*[@text='20191213_222352.jpg']"));
+	MobileElement image = driver.findElement(By.xpath("//*[@text='20191213_222352.jpg']"));
 	JavascriptExecutor js = ((JavascriptExecutor) driver);
 	js.executeScript("arguments[0].scrollIntoView(true);", image);
 	Thread.sleep(5000);
@@ -136,7 +137,7 @@ public void selwdphoto() throws InterruptedException
 	driver.findElement(By.xpath("//*[@text='Attach Withdrawal Face Photo']")).click();
 	driver.findElement(By.xpath("//*[@text='Gallery']")).click();
 	driver.findElement(By.xpath("//*[@text='OK']")).click();
-	AndroidElement image =driver.findElement(By.xpath("//*[@id='thumbnail' and (./preceding-sibling::* | ./following-sibling::*)[./*[@height>0] and ./*[contains(text(),'20191213')]]]"));
+	AndroidElement image =(AndroidElement) driver.findElement(By.xpath("//*[@id='thumbnail' and (./preceding-sibling::* | ./following-sibling::*)[./*[@height>0] and ./*[contains(text(),'20191213')]]]"));
 //	JavascriptExecutor js = ((JavascriptExecutor) driver);
 //	js.executeScript("arguments[0].scrollIntoView(true);", image);
 	image.click();

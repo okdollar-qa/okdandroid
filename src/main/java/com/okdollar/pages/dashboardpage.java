@@ -19,6 +19,9 @@ public class dashboardpage extends base{
 	@FindBy(xpath="//*[@text='Pay / Send']")
 	public AndroidElement paytoicon;
 	
+	@FindBy(xpath="//*[@text='Instant Pay']")
+	public AndroidElement instantpayicon;
+	
 	@FindBy(xpath="//*[@resource-id='com.jas.digitalkyats:id/searchLayout']")
 	public AndroidElement searchbar;
 	

@@ -1,11 +1,15 @@
 package com.okdollar.test;
 
+import java.awt.AWTException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -16,6 +20,9 @@ import com.okdollar.pages.paytoinvoicepage;
 import com.okdollar.pages.paytopage;
 import com.okdollar.pages.paytoreceiptpage;
 
+import okdollar.payto;
+
+@Test
 public class paytotest extends base {
 	paytopage paytopage;
 	paytoconfirmationpage paytoconfirmationpage;
@@ -28,7 +35,7 @@ public class paytotest extends base {
 		
 	}
 	
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() throws MalformedURLException {
       initialization();
    
@@ -42,9 +49,9 @@ public class paytotest extends base {
       
       
 	}
-	
-	public void normalnumber() throws InterruptedException
+	public void normalnumber() throws InterruptedException 
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -57,11 +64,13 @@ public class paytotest extends base {
 		String receipt =paytoreceiptpage.title.getText();
 		softAssert.assertEquals(receipt, "Receipt");
 		softAssert.assertAll();
+		
 
 		
 	}
 	public void decimalnumber() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -77,9 +86,10 @@ public class paytotest extends base {
 
 		
 	}
-
+	
 	public void cashbackmynumber() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -96,9 +106,10 @@ public class paytotest extends base {
 		softAssert.assertAll();
 
 	}
-
+	
 	public void cashbackothernumber() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -122,6 +133,7 @@ public class paytotest extends base {
 	
 	public void fuelnumber() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09770618364");
 		paytopage.confmobnum.sendKeys("09770618364");
@@ -144,6 +156,7 @@ public class paytotest extends base {
 	
 	public void restaurantnumber() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09959517386");
 		paytopage.confmobnum.sendKeys("09959517386");
@@ -166,8 +179,10 @@ public class paytotest extends base {
 		softAssert.assertAll();
 
 	}
+	
 	public void bonuspointnumber() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09774819667");
 		paytopage.confmobnum.sendKeys("09774819667");
@@ -184,8 +199,10 @@ public class paytotest extends base {
 		softAssert.assertAll();
 
 	}
+	
 	public void unregnumber() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("0930965966");
 		paytopage.confmobnum.sendKeys("0930965966");
@@ -209,6 +226,7 @@ public class paytotest extends base {
 	
 	public void othercountryregnumfromcontact() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.selfromcontact("Niresh");
 		waitandclick(paytopage.amtfield);
@@ -222,12 +240,13 @@ public class paytotest extends base {
 		Thread.sleep(3000);
 		String receipt =paytoreceiptpage.title.getText();
 		softAssert.assertEquals(receipt, "Receipt");
-			softAssert.assertAll();
+		softAssert.assertAll();
 
 	}
-
+	
 	public void merratingfromsuggestion() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.click();
 		paytopage.mobnumfield.setValue("09897");
@@ -253,6 +272,7 @@ public class paytotest extends base {
 	
 	public void hidemynumberfromfav() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.selfromfav("8972");
 		waitandclick(paytopage.amtfield);
@@ -268,8 +288,10 @@ public class paytotest extends base {
 		softAssert.assertAll();
 
 	}
+	
 	public void othercountryunregnum() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.selcountry("India");
 		paytopage.mobnumfield.sendKeys("9003947569");
@@ -286,8 +308,10 @@ public class paytotest extends base {
 		softAssert.assertAll();
 
 	}
+	
 	public void twominsvalandmorepayment() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09455569667");
 		paytopage.confmobnum.sendKeys("09455569667");
@@ -312,9 +336,10 @@ public class paytotest extends base {
 
 	}
 	
-	@Test
+	
 	public void homeicon() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -335,9 +360,10 @@ public class paytotest extends base {
 		
 	}
 	
-	@Test
+	
 	public void invoiceandinvshare() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -357,14 +383,15 @@ public class paytotest extends base {
 		softAssert.assertTrue(driver.findElement(By.xpath("//*[@resource-id='android:id/chooser_header']")).isDisplayed());
 		driver.navigate().back();
 		driver.navigate().back();
-        softAssert.assertAll();
+		softAssert.assertAll();
 		
 		
 	}
 	
-	@Test
+	
 	public void repeatpayment() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -380,13 +407,14 @@ public class paytotest extends base {
 		paytoreceiptpage.repeatpayment.click();
 		softAssert.assertEquals(paytopage.mobnumfield.getText(), "09897241420");
 		
-        softAssert.assertAll();
+		softAssert.assertAll();
 
 	}
 	
 	
 	public void receiptshare() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -402,13 +430,13 @@ public class paytotest extends base {
 		paytoreceiptpage.share.click();
 		softAssert.assertTrue(driver.findElement(By.xpath("//*[@resource-id='android:id/chooser_header']")).isDisplayed());
 		driver.navigate().back();
-	    softAssert.assertAll();
-		
+		softAssert.assertAll();
 		
 	}
-	@Test
+	
 	public void starrating() throws InterruptedException
 	{
+		sethome();
 		dashboardpage.paytoicon.click();
 		paytopage.mobnumfield.sendKeys("09897241420");
 		paytopage.confmobnum.sendKeys("09897241420");
@@ -424,17 +452,109 @@ public class paytotest extends base {
 		paytoreceiptpage.ratingpopupstars.click();
 		paytoreceiptpage.ratingpopupfeedbackfield.sendKeys("good feedback");
 		paytoreceiptpage.ratingpopupsubmitbtn.click();
-	    softAssert.assertAll();
+		softAssert.assertAll();
 		
 		
 	}
 	
-	@AfterMethod
-	public void teardown()
+	
+	public void addtocontact() throws InterruptedException
 	{
-		System.out.println("test");
+		sethome();
+		dashboardpage.paytoicon.click();
+		paytopage.mobnumfield.sendKeys("09897241420");
+		paytopage.confmobnum.sendKeys("09897241420");
+		waitandclick(paytopage.amtfield);
+		paytopage.amtfield.sendKeys("25");
+		paytopage.submitbtn.click();
+		loginpwd(driver);
+		paytoconfirmationpage.paybtn.click();
+		Thread.sleep(3000);
+		String receipt =paytoreceiptpage.title.getText();
+		softAssert.assertEquals(receipt, "Receipt");
+		paytoreceiptpage.addcontact.click();
+		driver.findElement(By.xpath("//*[@text='Cancel']")).click();
+		
+		softAssert.assertAll();
 		
 		
+	    
 	}
+	
+	public void addtofav() throws InterruptedException
+	{
+		sethome();
+		dashboardpage.paytoicon.click();
+		paytopage.mobnumfield.sendKeys("09897241420");
+		paytopage.confmobnum.sendKeys("09897241420");
+		waitandclick(paytopage.amtfield);
+		paytopage.amtfield.sendKeys("25");
+		paytopage.submitbtn.click();
+		loginpwd(driver);
+		paytoconfirmationpage.paybtn.click();
+		Thread.sleep(3000);
+		String receipt =paytoreceiptpage.title.getText();
+		softAssert.assertEquals(receipt, "Receipt");
+		paytoreceiptpage.addtofav.click();
+		paytoreceiptpage.addtofavpopupnamefield.sendKeys("Manik");
+		paytoreceiptpage.addtofavpopupsavebtn.click();
+
+		
+		softAssert.assertAll();
+	    
+	}
+//	@DataProvider(name ="mobilenumbers")
+//	public  Object[][] testdata()
+//	{
+//		Object[][] mobnum = new Object[5][1];
+//
+//		
+//		mobnum[0][0]="09971554804";
+//		mobnum[1][0]="09897241420";
+//		mobnum[2][0]="09692874819";
+//		mobnum[3][0]="0930965918";
+//		mobnum[4][0]="09774819667";
+//		return mobnum;
+//	}
+	
+	
+	public void numbervalidation() throws InterruptedException, AWTException
+	{
+		sethome();
+		ArrayList<String> mobnumbers=new ArrayList<String>();
+		Actions performAct = new Actions(driver);//Creating arraylist  
+		mobnumbers.add("897241420");//Adding object in arraylist  
+//		mobnumbers.add("959517386");  
+//		mobnumbers.add("774819667");  
+//		mobnumbers.add("692874819"); 
+		mobnumbers.add("309659");
+		mobnumbers.add("692874819"); 
+		
+	dashboardpage.paytoicon.click();
+		Iterator itr=mobnumbers.iterator();  
+		while(itr.hasNext()){  
+			String mobnum = (String) itr.next();
+	paytopage.mobnumfield.click();
+	
+	performAct.sendKeys(mobnum).build().perform();
+	 try{
+		 paytopage.confmobnum.isDisplayed();
+		
+     }
+     catch(NoSuchElementException e){
+      
+        softAssert.fail("The number"+mobnum+"is wrong");
+     }
+			
+			paytopage.mobnumfield.clear();
+			
+		}  
+
+		softAssert.assertAll();
+		
+	    
+	}
+	
+	
 
 }

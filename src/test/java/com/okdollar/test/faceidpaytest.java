@@ -32,6 +32,7 @@ public class faceidpaytest extends base {
   fpvid= new faceidpayvideopage();
   db = new dashboardpage();
 	}
+
 	@Test
 	public void basicflow() throws InterruptedException
 	{
@@ -51,13 +52,12 @@ public class faceidpaytest extends base {
 		Thread.sleep(5000);
 		fpdep.seldiv();
 		fpdep.nextbtn.click();
-		payto.loginpwd(driver);
+		loginpwd(driver);
 		
 		
 
 		
 	}
-	
 	
 	
 	

@@ -9,12 +9,15 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.okdollar.util.AppiumListener;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.events.EventFiringWebDriverFactory;
@@ -22,7 +25,7 @@ import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class base {
-	public static AndroidDriver<AndroidElement> driver;
+	public static AppiumDriver<MobileElement> driver;
 	public static Properties prop;
 	public  static AndroidDriver<AndroidElement> e_driver;
 	public static AppiumListener eventListener;
@@ -53,9 +56,9 @@ public class base {
 	        dc.setCapability(MobileCapabilityType.UDID, devid);
 	        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.jas.digitalkyats");
 	        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".ui.SplashActivity");
-	        driver = new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"), dc);
+	        driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), dc);
 	    	
-	        driver = EventFiringWebDriverFactory.getEventFiringWebDriver(driver, 
+	       driver = EventFiringWebDriverFactory.getEventFiringWebDriver(driver, 
 	        	    new AppiumListener());
 	       
 	
@@ -73,7 +76,7 @@ public class base {
 			}
 			}
 		}
-	 public static void loginpwd(AndroidDriver<AndroidElement> driver) throws InterruptedException {
+	 public static void loginpwd(AppiumDriver<MobileElement> driver) throws InterruptedException {
 			driver.findElement(By.xpath("//*[@resource-id='com.jas.digitalkyats:id/otp_edit_text_password']")).sendKeys("123456");
 			driver.findElement(By.xpath("//*[@text='Login']")).click();
 			Thread.sleep(3000);

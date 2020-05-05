@@ -45,24 +45,9 @@ public class rough extends base {
 	
 
     @Test(priority=10)
-	public void merrating() throws InterruptedException
+	public void rough() throws InterruptedException
 	{
-		//payto.sethome();
-	      
-//			driver.findElement(By.xpath("//*[@text='Pay / Send']")).click();
-//		
-//			driver.findElement(By.xpath("//*[@text='Pay / Send']")).click();
-//			driver.findElement(By.xpath("(//*[@class='android.widget.LinearLayout' and ./parent::*[@id='com.jas.digitalkyats:id/' and @class='android.widget.LinearLayout']]/*[@class='android.widget.ImageView'])[1]\r\n" + 
-//					"")).click();
-//			String con = "India (+91)";
-			//AndroidElement con =driver.findElement(By.xpath("//*[@text='india')]"));
-//			JavascriptExecutor js = ((JavascriptExecutor) driver);
-//			js.executeScript("arguments[0].scrollIntoView(true);", con);
-//			
-			((AndroidDriver<MobileElement>)driver).findElementByAndroidUIAutomator(
-					 "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\""+"Voting"+"\").instance(0))").click();
-
-			
+		
 			
 		
 	}
